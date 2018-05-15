@@ -1,0 +1,11 @@
+knpu_oauth2_client:
+  clients:
+    github:
+      # must be "github" - it activates that type!
+      type: github
+      # add and configure client_id and client_secret in parameters.yml
+      client_id: 188cccaa2fdd0371a729
+      client_secret: b98d1959ae2e6e050a21f9ed232e9de4d6bdfaaf
+      # a route name you'll create
+      redirect_route: connect_github_check
+      redirect_params: {}

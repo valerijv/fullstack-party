@@ -1,0 +1,15 @@
+.logout {
+  float: right;
+  font-size: 14px;
+  color: #2f3254;
+  text-decoration: none;
+  padding: 8px;
+  border: 1px solid transparent;
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    border: 1px solid #99cc33;
+  }
+}

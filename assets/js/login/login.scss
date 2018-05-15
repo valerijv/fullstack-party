@@ -1,0 +1,13 @@
+.background {
+  background: url('../../img/login-bg.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: table;
+  width: 100%;
+}
+
+.wrapper {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

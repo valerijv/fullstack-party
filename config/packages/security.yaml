@@ -1,0 +1,36 @@
+security:
+    providers:
+        user_provider:
+            entity:
+                class: App:User
+                property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+
+            guard:
+                authenticators:
+                    - App\Security\GithubAuthenticator
+
+            pattern:    ^/
+            http_basic: ~
+            provider: user_provider
+
+            logout:
+              path:   /logout
+              target: /login
+
+            remember_me:
+                secret:   '%env(APP_SECRET)%'
+                always_remember_me: true
+
+    access_control:
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/github-login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/connect_github_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/(.*?), roles: ROLE_USER }
