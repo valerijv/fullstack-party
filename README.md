@@ -6,5 +6,5 @@
 3. php bin/console doctrine:migrations:migrate
 4. npm install
 5. ./node_modules/.bin/encore production
-6. php bin/console server:run
+6. sudo php bin/console server:run
 7. http://127.0.0.1:8000
